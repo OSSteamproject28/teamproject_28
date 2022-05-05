@@ -7,7 +7,7 @@ typedef struct{
 }Person;
 
 //CRUD
-int addPerson(Person p[],int count); // 제품을 추가
-void listPerson(Person p[],int count); // 전체 등록된 제품 리스트 출력(조회)
-int updatePerson(Person p[]); //제품 수정하는 함수
-int deletePerson(Person p[],int num); //제품 삭제하는 함수
+int addPerson(Person p[],int count);
+void listPerson(Person p[],int count);
+int updatePerson(Person p[]);
+int deletePerson(Person p[],int num); 
