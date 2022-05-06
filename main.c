@@ -3,7 +3,7 @@
 //main.c
 
 int main(){
-    Product p[20];
+    Person p[20];
     int count, menu;
     int num,temp;
     count = loadPerson(p);
