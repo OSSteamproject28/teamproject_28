@@ -1,5 +1,5 @@
-#include "manager.h"
-#include "product.h"
+#include "manage.h"
+#include "person.h"
 //main.c
 
 int main(){
