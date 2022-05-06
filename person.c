@@ -4,6 +4,17 @@
 #define MAX 100
 //CRUD
 
+//조회
+void listPerson(Person p[],int count){
+    printf("\n출퇴근 시간 조회\n");
+    printf("================================\n");
+    for(int i=0;i<count;i++){
+        if(p[i].num<=-50) continue;
+        printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
+    }
+
+}
+
 //추가
 int addPerson(Person p[],int count){
     int c = count;
@@ -27,18 +38,10 @@ int addPerson(Person p[],int count){
 
     printf("\n=> 추가됨!\n");
     c++;
-
+    
     return c;
 }
-//조회
-void listPerson(Person p[],int count){
-    printf("\n출퇴근 시간 조회\n");
-    printf("================================\n");
-    for(int i=0;i<count;i++){
-        if(p[i].num<=-50) continue;
-        printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
 
-}
 //수정
 int updatePerson(Person p[]){
     int num = 0;
@@ -48,24 +51,24 @@ int updatePerson(Person p[]){
 
     if(num != 0){
         printf("새 이름은? ");
-        scanf("%s",p[c].name);
+        scanf("%s",p[num].name);
 
         getchar();
         printf("새 부서는? ");
-        fgets(p[c].team,MAX,stdin);
-        p[c].team[strlen(p[c].team)-1]='\0';
+        fgets(p[num].team,MAX,stdin);
+        p[num].team[strlen(p[num].team)-1]='\0';
 
         printf("새 출근시간은? ");
-        scanf("%d",&(p[c].start));
+        scanf("%d",&(p[num].start));
 
         printf("새 퇴근시간은? ");
-        scanf("%d",&(p[c].leave));     
+        scanf("%d",&(p[num].leave));     
 
-        printf("=> 수정됨!\n");  
+        printf("=> 수정됨!\n");
     }
     else if(num == 0) printf("=> 수정취소!\n");
 
-    return 0;
+    return 1;
 }
 
 //삭제
