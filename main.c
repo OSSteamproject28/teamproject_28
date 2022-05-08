@@ -1,5 +1,4 @@
 #include "manage.h"
-//#include "person.h"
 //main.c
 
 
@@ -8,7 +7,7 @@ int main(){
     int count, menu;
     int num,temp;
     count = loadPerson(p);
-
+   
     while (1){
         menu = selectMenu();
         if (menu == 0) break;
@@ -59,6 +58,10 @@ int main(){
         else if (menu == 8){
             searchPerson(p,count);
         } //이름 검색
+
+        else if (menu == 9){
+            searchTeam(p,count);
+        } //부서 검색
 
     }
     printf("종료됨!\n");
