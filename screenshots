@@ -1,11 +1,19 @@
 1. Create
 -사람이름, 부서, 출근시간, 퇴근시간을 등록한다.
+![create](https://user-images.githubusercontent.com/100747281/167305742-66c894c0-6e09-46db-910f-64897a8b43df.png)
+
 
 2. Read
 -등록된 정보를 순서대로 나열한다.
+![Read](https://user-images.githubusercontent.com/100747281/167305776-517746f3-b3c1-4a2f-b500-758021c800dd.png)
+
 
 3. Update
 -등록된 정보 중 번호를 골라 수정한다.
+![Update](https://user-images.githubusercontent.com/100747281/167305791-8842bcb0-4e6f-4f54-b2d0-c3b16d334987.png)
+
 
 4. Delete
 -등록된 정보 중 번호를 골라 삭제한다.
+![Delete](https://user-images.githubusercontent.com/100747281/167305804-d0d00fbe-eaff-423e-944a-dc71be504f60.png)
+
