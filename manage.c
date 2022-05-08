@@ -15,6 +15,7 @@ int selectMenu()
     printf("6. 출근 검색\n");
     printf("7. 퇴근 시간 검색\n");
     printf("8. 이름 검색\n");
+    printf("9. 부서 검색\n");
     printf("0. 종료\n\n");
 
     printf("=> 원하는 메뉴는? ");
@@ -57,14 +58,14 @@ int searchLeave(Person p[], int count){
     return 1;
 }
 
-int searPerson(Person p[], int count){
+int searchPerson(Person p[], int count){
     char n[10];
 
     printf("검색할 이름은? ");
     scanf("%s", n);
-
+   
     for(int i=0; i<count; i++){
-        if(strstr(p[i].start, n)){
+        if(strcmp(p[i].name, n)==0){
             printf("\n검색 결과\n");
             printf("================================\n");
             printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
@@ -72,9 +73,45 @@ int searPerson(Person p[], int count){
     }
     return 1;
 }
-int loadPerson(Person p[]){
 
+int searchTeam(Person p[], int count){
+    char n[10];
+
+    printf("검색할 부서는? ");
+    scanf("%s", n);
+   
+    for(int i=0; i<count; i++){
+        if(strcmp(p[i].team, n)==0){
+            printf("\n검색 결과\n");
+            printf("================================\n");
+            printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
+        }
+    }
+    return 1;
 }
+
+int loadPerson(Person p[]){
+    int count = 0, i = 0;
+    FILE *fp;
+    fp = fopen("person.txt", "r");
+    if(fp == NULL){
+        printf("파일없음!\n");
+        return 0;
+    }else{
+    
+        for(; i < 100; i++){
+        if(feof(fp))break;
+        fscanf(fp, "%d   %s   %s   %d   %d\n", &p[i].num,p[i].name,p[i].team,&p[i].start,&p[i].leave);
+        printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
+
+    }
+    
+    fclose(fp);
+    printf("=> 로딩완료!\n");
+    return i;
+    }
+}
+
 int savePerson(Person p[], int count, int num){
     FILE *fp;
     fp = fopen("person.txt", "wt");
