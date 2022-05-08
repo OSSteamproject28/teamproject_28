@@ -40,3 +40,49 @@ int searchStart(Person p[], int count){
     }
     return 1;
 }
+
+int searchLeave(Person p[], int count){
+    int n;
+
+    printf("검색할 퇴근 시간은? ");
+    scanf("%d",&n);
+
+    for(int i=0; i<count; i++){
+        if(p[i].leave == n){
+            printf("\n검색 결과\n");
+            printf("================================\n");
+            printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
+        }
+    }
+    return 1;
+}
+
+int searPerson(Person p[], int count){
+    char n[10];
+
+    printf("검색할 이름은? ");
+    scanf("%s", n);
+
+    for(int i=0; i<count; i++){
+        if(strstr(p[i].start, n)){
+            printf("\n검색 결과\n");
+            printf("================================\n");
+            printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
+        }
+    }
+    return 1;
+}
+int loadPerson(Person p[]){
+
+}
+int savePerson(Person p[], int count, int num){
+    FILE *fp;
+    fp = fopen("person.txt", "wt");
+
+    for(int i = 0; i < count; i++){
+        if(p[i].num == -1)continue;
+        fprintf(fp, "%d   %s   %s   %d   %d\n", p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
+    }
+    fclose(fp);
+    printf("=> 로딩완료! \n");
+}

@@ -1,6 +1,7 @@
 #include "manage.h"
-#include "person.h"
+//#include "person.h"
 //main.c
+
 
 int main(){
     Person p[20];
