@@ -51,18 +51,18 @@ int updatePerson(Person p[]){
 
     if(num != 0){
         printf("새 이름은? ");
-        scanf("%s",p[num].name);
+        scanf("%s",p[num-1].name);
 
         getchar();
         printf("새 부서는? ");
-        fgets(p[num].team,MAX,stdin);
-        p[num].team[strlen(p[num].team)-1]='\0';
+        fgets(p[num-1].team,MAX,stdin);
+        p[num-1].team[strlen(p[num-1].team)-1]='\0';
 
         printf("새 출근시간은? ");
-        scanf("%d",&(p[num].start));
+        scanf("%d",&(p[num-1].start));
 
         printf("새 퇴근시간은? ");
-        scanf("%d",&(p[num].leave));     
+        scanf("%d",&(p[num-1].leave));     
 
         printf("=> 수정됨!\n");
     }
