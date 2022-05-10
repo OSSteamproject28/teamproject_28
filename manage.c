@@ -99,7 +99,7 @@ int loadPerson(Person p[]){
         return 0;
     }else{
     
-        for(; i < 100; i++){
+        for(int i=0; i < 100; i++){
         if(feof(fp))break;
         fscanf(fp, "%d   %s   %s   %d   %d\n", &p[i].num,p[i].name,p[i].team,&p[i].start,&p[i].leave);
         printf("%d   %s   %s   %d   %d\n",p[i].num,p[i].name,p[i].team,p[i].start,p[i].leave);
