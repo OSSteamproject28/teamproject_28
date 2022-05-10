@@ -5,6 +5,7 @@
 프로그램에 이름과 정보를 등록하여 해당인의 출근, 퇴근 시간을 관리하고 조회할 수 있도록 한다.
 
 ![image](https://user-images.githubusercontent.com/100747281/166185401-f15b9f67-dedb-4095-800f-eaf6c578c985.png)
+
 <다음 이미지는 참고 사진>
 
 ## 기능 설명
